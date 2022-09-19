@@ -6,19 +6,27 @@
 
 //32679 -> 6
 
+int poiskchisla3(int ishodnik)
+{
+    while (ishodnik > 100) ishodnik = ishodnik - 100;
+    // Console.Write($"сотые {ishodnik}");
+    while (ishodnik > 10) ishodnik = ishodnik - 10;
+    //result = ishodnik;
+    return ishodnik;
+}
+
+
 Console.Write("Введите число:");
 int x = Convert.ToInt32(Console.ReadLine());
-if (x < 100 )
+if (x < 100)
 {
     Console.Write("Третьей цифры нет, пожалуйста, попробуйте заного :)");
 }
 else
 {
-    int N = x;
-    while (N > 100) N = N - 100;
-    int dv = N;
-    while (N >= 10) N = N - 10;
-    int Edinicy = N;
-    int itog = (dv - Edinicy) / 10;
-    Console.Write(itog);
+    int chislo = -1;
+    int n = x;
+    while (n > 1000) n = n / 10;
+    chislo = poiskchisla3(n);
+    Console.Write($"Третьей цифра {chislo}");
 }
